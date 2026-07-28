@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --safety: #ffcc00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy text-slate-100 antialiased;
+}
+
+/* Anchor offset so section headings clear the sticky nav */
+section[id],
+div[id] {
+  scroll-margin-top: 84px;
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-base font-semibold transition
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-safety focus-visible:ring-offset-2
+           focus-visible:ring-offset-navy;
+  }
+
+  .btn-primary {
+    @apply btn bg-safety text-navy hover:bg-safety-light;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-slate-500 text-white hover:border-safety hover:text-safety;
+  }
+
+  .section {
+    @apply py-16 sm:py-20;
+  }
+
+  .eyebrow {
+    @apply mb-3 inline-block text-sm font-bold uppercase tracking-[0.18em] text-safety;
+  }
+
+  .h2 {
+    @apply text-3xl font-extrabold leading-tight text-white sm:text-4xl;
+  }
+
+  .lede {
+    @apply text-lg leading-relaxed text-slate-300;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-slate-200;
+  }
+
+  .field-input {
+    @apply w-full rounded-md border border-slate-600 bg-navy-light px-3.5 py-2.5 text-slate-100
+           placeholder-slate-500 transition focus:border-safety focus:outline-none focus:ring-1 focus:ring-safety;
+  }
+
+  .check-row {
+    @apply flex items-start gap-2.5 text-sm text-slate-200;
+  }
+}
