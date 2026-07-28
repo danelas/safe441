@@ -20,7 +20,8 @@ It is intentionally *not* a large informational site. A visitor can immediately:
 ## Sections
 
 Hero · The official request · The problem · Corridor map (inline SVG) ·
-Report a dangerous location (form) · Join the coalition (form) · Progress tracker ·
+Report a dangerous location (form) · Join the coalition (form) ·
+Remembering Lives Lost on 441 (voluntary memorial form) · Progress tracker ·
 Principles · Research & proposal · Founding coalition · Transparency statement ·
 Contact · Footer disclaimer.
 
@@ -38,8 +39,8 @@ and skips the database write / email send. Set the vars before launch.
 ## Database setup
 
 Run [`supabase/schema.sql`](supabase/schema.sql) once in the Supabase SQL editor.
-It creates four tables — `coalition_members`, `danger_reports`,
-`organization_endorsements`, `campaign_updates` — each with a `status` column
+It creates five tables — `coalition_members`, `danger_reports`,
+`organization_endorsements`, `memorial_stories`, `campaign_updates` — each with a `status` column
 (`new · needs_review · verified · added_to_evidence_map · sent_to_agency ·
 agency_responded · resolved · closed`). Row Level Security is enabled with no public
 policies; only the server's service-role key can read or write.

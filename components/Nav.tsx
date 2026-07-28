@@ -6,6 +6,7 @@ const links = [
   { href: "#request", label: "The Request" },
   { href: "#map", label: "Corridor Map" },
   { href: "#report", label: "Report a Location" },
+  { href: "#remember", label: "Remembering" },
   { href: "#progress", label: "Progress" },
   { href: "#proposal", label: "Proposal" },
   { href: "#about", label: "About" },

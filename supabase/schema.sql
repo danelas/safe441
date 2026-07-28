@@ -62,6 +62,23 @@ create table if not exists public.organization_endorsements (
   status             text not null default 'new'
 );
 
+create table if not exists public.memorial_stories (
+  id                          uuid primary key default gen_random_uuid(),
+  created_at                  timestamptz not null default now(),
+  your_name                   text,
+  contact                     text not null,
+  person_name                 text not null,
+  crash_date_location         text,
+  relationship                text,
+  share                       text,
+  safety_change               text,
+  participation               text[] not null default '{}',
+  permission_display_name     boolean not null default false,
+  permission_display_photos   boolean not null default false,
+  permission_identify         boolean not null default false,
+  status                      text not null default 'new'
+);
+
 create table if not exists public.campaign_updates (
   id           uuid primary key default gen_random_uuid(),
   created_at   timestamptz not null default now(),
@@ -75,6 +92,7 @@ create table if not exists public.campaign_updates (
 create index if not exists coalition_members_status_idx on public.coalition_members (status);
 create index if not exists danger_reports_status_idx     on public.danger_reports (status);
 create index if not exists danger_reports_concern_idx    on public.danger_reports (concern_type);
+create index if not exists memorial_stories_status_idx    on public.memorial_stories (status);
 
 -- ---------------------------------------------------------------------------
 -- Row Level Security: lock everything down. The server uses the service-role
@@ -83,4 +101,5 @@ create index if not exists danger_reports_concern_idx    on public.danger_report
 alter table public.coalition_members        enable row level security;
 alter table public.danger_reports           enable row level security;
 alter table public.organization_endorsements enable row level security;
+alter table public.memorial_stories         enable row level security;
 alter table public.campaign_updates         enable row level security;

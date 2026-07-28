@@ -36,7 +36,7 @@ function shell(title: string, bodyHtml: string) {
 
 /** Confirmation to the person who submitted, plus a private notification to the campaign. */
 export async function sendSubmissionEmails(opts: {
-  kind: "coalition" | "report";
+  kind: "coalition" | "report" | "memorial";
   toEmail?: string | null;
   toName?: string | null;
   summaryRows: Array<[string, string]>;
@@ -45,7 +45,13 @@ export async function sendSubmissionEmails(opts: {
   if (!client) return;
 
   const isCoalition = opts.kind === "coalition";
-  const label = isCoalition ? "coalition sign-up" : "danger-location report";
+  const isMemorial = opts.kind === "memorial";
+  const label =
+    opts.kind === "coalition"
+      ? "coalition sign-up"
+      : opts.kind === "memorial"
+        ? "memorial submission"
+        : "danger-location report";
 
   const rowsHtml = opts.summaryRows
     .filter(([, v]) => v && v.trim() !== "")
@@ -63,27 +69,39 @@ export async function sendSubmissionEmails(opts: {
 
   // Confirmation to submitter
   if (opts.toEmail) {
-    const confirmBody = isCoalition
-      ? `<p style="color:#cbd5e1;line-height:1.6">Thank you${
-          opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
-        }. Your interest in joining the Safe 441 coalition has been received. We'll be in touch as the founding coalition forms.</p>
-         <p style="color:#94a3b8;font-size:13px;line-height:1.6">Safe 441 is nonpartisan and currently an independent community initiative.</p>`
-      : `<p style="color:#cbd5e1;line-height:1.6">Thank you${
-          opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
-        }. Your report of a dangerous location has been received and will be reviewed as evidence for the campaign.</p>
+    let confirmTitle: string;
+    let confirmSubject: string;
+    let confirmBody: string;
+
+    if (isCoalition) {
+      confirmTitle = "You're on the list";
+      confirmSubject = "Thanks for joining the Safe 441 coalition";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
+        opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
+      }. Your interest in joining the Safe 441 coalition has been received. We'll be in touch as the founding coalition forms.</p>
+         <p style="color:#94a3b8;font-size:13px;line-height:1.6">Safe 441 is nonpartisan and currently an independent community initiative.</p>`;
+    } else if (isMemorial) {
+      confirmTitle = "Thank you for sharing";
+      confirmSubject = "We received your message — Safe 441";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
+        opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
+      }. We are grateful you reached out. A member of Safe 441 will contact you privately and gently.</p>
+         <p style="color:#94a3b8;font-size:13px;line-height:1.6">Nothing you shared — no name, photograph, or story — will ever be published without your clear, specific permission. Sharing with us does not commit you to anything public.</p>`;
+    } else {
+      confirmTitle = "Report received";
+      confirmSubject = "Your Safe 441 location report was received";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
+        opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
+      }. Your report of a dangerous location has been received and will be reviewed as evidence for the campaign.</p>
          <p style="color:#e02424;font-size:13px;line-height:1.6"><strong>Reminder:</strong> Do not use this site to report an emergency. Call 911 for immediate police, fire, or medical assistance.</p>`;
+    }
 
     tasks.push(
       client.emails.send({
         from: FROM_EMAIL,
         to: opts.toEmail,
-        subject: isCoalition
-          ? "Thanks for joining the Safe 441 coalition"
-          : "Your Safe 441 location report was received",
-        html: shell(
-          isCoalition ? "You're on the list" : "Report received",
-          confirmBody
-        ),
+        subject: confirmSubject,
+        html: shell(confirmTitle, confirmBody),
       })
     );
   }

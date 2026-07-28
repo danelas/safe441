@@ -5,6 +5,7 @@ import Problem from "@/components/Problem";
 import CorridorMap from "@/components/CorridorMap";
 import ReportForm from "@/components/ReportForm";
 import CoalitionForm from "@/components/CoalitionForm";
+import MemorialForm from "@/components/MemorialForm";
 import Progress from "@/components/Progress";
 import Principles from "@/components/Principles";
 import Proposal from "@/components/Proposal";
@@ -24,6 +25,7 @@ export default function Home() {
         <CorridorMap />
         <ReportForm />
         <CoalitionForm />
+        <MemorialForm />
         <Progress />
         <Principles />
         <Proposal />
