@@ -1,17 +1,16 @@
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Background: swap this gradient for a real muted photo/video of the 441 corridor.
-          Drop an image at /public/corridor.jpg and set it as the background of .hero-bg. */}
+      {/* Real muted photo of the US 441 corridor. Replace /public/corridor.jpg to
+          swap the image; the dark gradient overlay keeps hero text readable. */}
       <div className="hero-bg absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-soft via-navy to-charcoal" />
         <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(90deg, #ffcc00 0 2px, transparent 2px 90px)",
-          }}
+          className="absolute inset-0 bg-charcoal bg-cover bg-center"
+          style={{ backgroundImage: "url('/corridor.jpg')" }}
         />
+        {/* Darkening overlay for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/80 to-charcoal/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/70 to-transparent" />
       </div>
 
       <div className="container-content py-20 sm:py-28">
@@ -43,6 +42,19 @@ export default function Hero() {
           community organizations are invited to participate.
         </p>
       </div>
+
+      {/* Photo attribution — required by the image's CC BY-SA 2.0 license. */}
+      <p className="absolute bottom-2 right-3 text-[10px] text-slate-500">
+        US 441, Broward County ·{" "}
+        <a
+          href="https://commons.wikimedia.org/wiki/File:US441-FL7-CopansRoadEarlyMorning-Jul2013_(26252081818).jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-slate-400"
+        >
+          Photo: formulanone, CC BY-SA 2.0
+        </a>
+      </p>
     </section>
   );
 }
