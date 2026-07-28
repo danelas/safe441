@@ -88,6 +88,18 @@ export default function MemorialForm() {
               published.
             </p>
           </div>
+
+          <a
+            href="/docs/remembering-those-we-lost-on-441.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-navy px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-safety hover:text-white"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-safety">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Download the memorial handout (PDF)
+          </a>
         </div>
 
         <form
