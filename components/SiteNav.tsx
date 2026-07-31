@@ -1,45 +1,46 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const links = [
-  { href: "#request", label: "The Request" },
-  { href: "#map", label: "Corridor Map" },
-  { href: "#report", label: "Report a Location" },
-  { href: "#remember", label: "Remembering" },
-  { href: "#progress", label: "Progress" },
-  { href: "#proposal", label: "Proposal" },
-  { href: "#about", label: "About" },
+  { href: "/report", label: "Report a Problem" },
+  { href: "/tracker", label: "Tracker" },
+  { href: "/projects", label: "Projects" },
+  { href: "/441-safe", label: "441 SAFE" },
+  { href: "/business-rescue", label: "Business Rescue" },
+  { href: "/get-involved", label: "Get Involved" },
+  { href: "/about", label: "About" },
 ];
 
-export default function Nav() {
+export default function SiteNav() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
       <nav className="container-content flex h-[68px] items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded bg-safety font-extrabold text-navy">
-            441
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 items-center justify-center rounded bg-safety text-sm font-extrabold text-navy">
+            FIX
           </span>
           <span className="text-lg font-extrabold tracking-tight text-white">
-            Safe&nbsp;441
+            Fix&nbsp;Broward
           </span>
-        </a>
+        </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          {links.map((l) => (
-            <a
+        <div className="hidden items-center gap-5 lg:flex">
+          {links.slice(1).map((l) => (
+            <Link
               key={l.href}
               href={l.href}
               className="text-sm font-medium text-slate-300 transition hover:text-safety"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a href="#coalition" className="btn-primary !px-5 !py-2 text-sm">
-            Join the Coalition
-          </a>
+          <Link href="/report" className="btn-primary !px-5 !py-2 text-sm">
+            Report a Problem
+          </Link>
         </div>
 
         <button
@@ -62,22 +63,15 @@ export default function Nav() {
         <div className="border-t border-white/10 bg-navy px-5 pb-4 lg:hidden">
           <div className="flex flex-col gap-1 pt-2">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="rounded px-2 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-safety"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#coalition"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-2 w-full text-sm"
-            >
-              Join the Coalition
-            </a>
           </div>
         </div>
       )}

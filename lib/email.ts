@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const CAMPAIGN_EMAIL = process.env.CAMPAIGN_EMAIL || "hello@safe441.org";
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Safe 441 <hello@safe441.org>";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Fix Broward <hello@safe441.org>";
 
 let resend: Resend | null | undefined;
 
@@ -21,14 +21,14 @@ function shell(title: string, bodyHtml: string) {
   return `
   <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0e1726;padding:28px;color:#e2e8f0">
     <div style="max-width:560px;margin:0 auto;background:#16223a;border-radius:12px;overflow:hidden;border:1px solid #24344f">
-      <div style="background:#ffcc00;color:#0e1726;padding:16px 24px;font-weight:800;font-size:18px;letter-spacing:0.02em">Safe 441</div>
+      <div style="background:#ffcc00;color:#0e1726;padding:16px 24px;font-weight:800;font-size:18px;letter-spacing:0.02em">Fix Broward</div>
       <div style="padding:24px">
         <h1 style="margin:0 0 12px;font-size:20px;color:#ffffff">${title}</h1>
         ${bodyHtml}
       </div>
       <div style="padding:16px 24px;border-top:1px solid #24344f;font-size:12px;color:#94a3b8">
-        Independent community initiative. Not affiliated with or operated by FDOT, Broward County,
-        Hollywood, Davie, or any public-safety agency.
+        Fix Broward is an independent community initiative. Not affiliated with or operated by
+        FDOT, Broward County, any city, or any public-safety agency. Not an emergency service.
       </div>
     </div>
   </div>`;
@@ -36,7 +36,14 @@ function shell(title: string, bodyHtml: string) {
 
 /** Confirmation to the person who submitted, plus a private notification to the campaign. */
 export async function sendSubmissionEmails(opts: {
-  kind: "coalition" | "report" | "memorial";
+  kind:
+    | "coalition"
+    | "report"
+    | "memorial"
+    | "problem"
+    | "business"
+    | "volunteer"
+    | "newsletter";
   toEmail?: string | null;
   toName?: string | null;
   summaryRows: Array<[string, string]>;
@@ -46,12 +53,16 @@ export async function sendSubmissionEmails(opts: {
 
   const isCoalition = opts.kind === "coalition";
   const isMemorial = opts.kind === "memorial";
-  const label =
-    opts.kind === "coalition"
-      ? "coalition sign-up"
-      : opts.kind === "memorial"
-        ? "memorial submission"
-        : "danger-location report";
+  const labels: Record<typeof opts.kind, string> = {
+    coalition: "coalition sign-up",
+    report: "danger-location report",
+    memorial: "memorial submission",
+    problem: "problem report",
+    business: "Business Rescue application",
+    volunteer: "volunteer sign-up",
+    newsletter: "newsletter subscription",
+  };
+  const label = labels[opts.kind];
 
   const rowsHtml = opts.summaryRows
     .filter(([, v]) => v && v.trim() !== "")
@@ -87,12 +98,33 @@ export async function sendSubmissionEmails(opts: {
         opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
       }. We are grateful you reached out. A member of Safe 441 will contact you privately and gently.</p>
          <p style="color:#94a3b8;font-size:13px;line-height:1.6">Nothing you shared — no name, photograph, or story — will ever be published without your clear, specific permission. Sharing with us does not commit you to anything public.</p>`;
-    } else {
-      confirmTitle = "Report received";
-      confirmSubject = "Your Safe 441 location report was received";
+    } else if (opts.kind === "business") {
+      confirmTitle = "Application received";
+      confirmSubject = "Your Business Rescue application was received — Fix Broward";
       confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
         opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
-      }. Your report of a dangerous location has been received and will be reviewed as evidence for the campaign.</p>
+      }. Your Business Rescue application has been received. We review every application and will reach out if your business is selected for an upcoming round.</p>
+         <p style="color:#94a3b8;font-size:13px;line-height:1.6">Applying does not guarantee selection, and there is no cost to apply.</p>`;
+    } else if (opts.kind === "volunteer") {
+      confirmTitle = "Thanks for stepping up";
+      confirmSubject = "Your volunteer sign-up was received — Fix Broward";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
+        opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
+      }. Your volunteer sign-up has been received. We'll contact you as projects that match your skills and interests get moving.</p>`;
+    } else if (opts.kind === "newsletter") {
+      confirmTitle = "You're subscribed";
+      confirmSubject = "You're subscribed to Fix Broward updates";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thanks for subscribing. We send updates when there is something real to report — verified issues, official responses, and resolved problems.</p>
+         <p style="color:#94a3b8;font-size:13px;line-height:1.6">You can unsubscribe any time by replying to any update.</p>`;
+    } else {
+      confirmTitle = "Report received";
+      confirmSubject =
+        opts.kind === "problem"
+          ? "Your Fix Broward report was received"
+          : "Your 441 SAFE location report was received";
+      confirmBody = `<p style="color:#cbd5e1;line-height:1.6">Thank you${
+        opts.toName ? `, ${escapeHtml(opts.toName)}` : ""
+      }. Your report has been received and has entered the review queue. Nothing publishes automatically — the team reviews every submission first.</p>
          <p style="color:#e02424;font-size:13px;line-height:1.6"><strong>Reminder:</strong> Do not use this site to report an emergency. Call 911 for immediate police, fire, or medical assistance.</p>`;
     }
 

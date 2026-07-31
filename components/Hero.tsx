@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
 
       <div className="container-content py-20 sm:py-28">
-        <p className="eyebrow">Nonpartisan community initiative · Central Broward</p>
+        <p className="eyebrow">A Fix Broward project · Nonpartisan · Central Broward</p>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl">
           A safer 441 starts with{" "}
           <span className="text-safety">one coordinated plan.</span>

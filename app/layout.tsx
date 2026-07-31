@@ -1,35 +1,42 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 const SITE_URL = "https://safe441.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Safe 441 — A safer 441 starts with one coordinated plan",
+  title: {
+    default: "Fix Broward — Reported. Routed. Tracked. Fixed.",
+    template: "%s — Fix Broward",
+  },
   description:
-    "Safe 441 is a nonpartisan community effort seeking practical, measurable safety improvements along US 441 between Sheridan Street and Griffin Road in Broward County.",
+    "Fix Broward is a civic-action platform for Broward County: report a local problem, see who is responsible, follow a public timeline, and find out whether it was actually fixed.",
   keywords: [
-    "Safe 441",
+    "Fix Broward",
+    "Broward County",
+    "report a problem",
+    "civic action",
+    "road safety",
+    "441 SAFE",
     "US 441 safety",
-    "Broward County road safety",
-    "Road Safety Audit",
-    "pedestrian safety",
-    "Hollywood",
-    "Davie",
+    "small business help",
+    "public accountability",
   ],
   openGraph: {
-    title: "Safe 441 — A safer 441 starts with one coordinated plan",
+    title: "Fix Broward — Reported. Routed. Tracked. Fixed.",
     description:
-      "A nonpartisan community effort for practical, measurable safety improvements along US 441 in central Broward County.",
+      "Report a local problem, see who is responsible, follow a public timeline, and find out whether it was actually fixed.",
     url: SITE_URL,
-    siteName: "Safe 441",
+    siteName: "Fix Broward",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Safe 441",
+    title: "Fix Broward",
     description:
-      "A nonpartisan community effort for a safer US 441 in central Broward County.",
+      "One problem. One responsible party. One proposed fix. Public follow-through.",
   },
 };
 
@@ -40,7 +47,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SiteNav />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
