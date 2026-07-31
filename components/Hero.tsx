@@ -14,23 +14,22 @@ export default function Hero() {
       </div>
 
       <div className="container-content py-20 sm:py-28">
-        <p className="eyebrow">A Fix Broward project · Nonpartisan · Central Broward</p>
+        <p className="eyebrow">A Broward Forward project · Nonpartisan · Central Broward</p>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl">
-          A safer 441 starts with{" "}
-          <span className="text-safety">one coordinated plan.</span>
+          A Safer <span className="text-safety">441</span>
         </h1>
         <p className="lede mt-6 max-w-2xl">
-          Safe 441 is a nonpartisan community effort seeking practical, measurable
-          safety improvements along US&nbsp;441 between Sheridan Street and Griffin
-          Road.
+          Listening, learning, and exploring practical improvements for one of
+          Broward&apos;s most important roads — US&nbsp;441 between Sheridan
+          Street and Griffin Road.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a href="#coalition" className="btn-primary">
-            Join the Coalition
+          <a href="#report" className="btn-primary">
+            Share Your Experience
           </a>
-          <a href="#report" className="btn-secondary">
-            Report a Dangerous Location
+          <a href="#coalition" className="btn-secondary">
+            Join the Conversation
           </a>
           <a href="#proposal" className="btn-secondary">
             Read the Proposal
@@ -38,8 +37,8 @@ export default function Hero() {
         </div>
 
         <p className="mt-6 max-w-2xl text-sm text-slate-400">
-          Residents, businesses, transit riders, parents, professionals, and
-          community organizations are invited to participate.
+          Drivers, pedestrians, transit riders, businesses, parents, planners,
+          and community organizations are all invited to participate.
         </p>
       </div>
 

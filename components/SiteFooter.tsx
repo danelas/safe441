@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const nav = [
-  { href: "/report", label: "Report a Problem" },
-  { href: "/tracker", label: "Problem Tracker" },
+  { href: "/report", label: "Share an Idea or Concern" },
+  { href: "/tracker", label: "Project Tracker" },
   { href: "/projects", label: "Projects" },
-  { href: "/441-safe", label: "441 SAFE Broward" },
+  { href: "/441-safe", label: "A Safer 441" },
   { href: "/business-rescue", label: "Business Rescue" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/about", label: "About" },
@@ -18,14 +18,14 @@ export default function SiteFooter() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded bg-safety text-sm font-extrabold text-navy">
-                FIX
+                BF
               </span>
-              <span className="text-lg font-extrabold text-white">Fix Broward</span>
+              <span className="text-lg font-extrabold text-white">Broward Forward</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              One problem. One responsible party. One proposed fix. Public
-              follow-through. Fix Broward investigates local problems, identifies
-              who is responsible, and publicly tracks what happens next.
+              Meet Broward. Imagine better. Test ideas. Follow the progress.
+              Broward Forward is a local media and community project exploring
+              practical ways to improve life across Broward County.
             </p>
             <a
               href="mailto:hello@safe441.org"
@@ -46,15 +46,15 @@ export default function SiteFooter() {
 
         <div className="mt-10 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-slate-500">
-            Fix Broward is an independent community initiative. It is not a
-            government service, an emergency-response service, or a legal service,
-            and it is not affiliated with FDOT, Broward County, any city, or any
-            public-safety agency. Reporting a problem here does not guarantee it
-            will be selected or resolved.
+            Broward Forward is an independent community media project. It is not
+            a government service, an emergency-response service, or a legal
+            service, and it is not affiliated with FDOT, Broward County, any
+            city, or any public-safety agency. Sharing an idea or concern here
+            does not guarantee it will be selected or pursued.
           </p>
           <p className="mt-2 text-xs text-slate-600">
-            © {new Date().getFullYear()} Fix Broward. If someone is in immediate
-            danger, call 911.
+            © {new Date().getFullYear()} Broward Forward. If someone is in
+            immediate danger, call 911.
           </p>
         </div>
       </div>

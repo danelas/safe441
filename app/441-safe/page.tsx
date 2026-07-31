@@ -14,24 +14,24 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "441 SAFE Broward",
+  title: "A Safer 441",
   description:
-    "441 SAFE Broward is a nonpartisan community effort seeking practical, measurable safety improvements along US 441 / State Road 7 in Broward County — the flagship project of Fix Broward.",
+    "A Safer 441 is a Broward Forward project: listening, learning, and exploring practical improvements for one of Broward's most important roads — US 441 / State Road 7.",
 };
 
 export default function Safe441Page() {
   return (
     <main>
       <Hero />
-      <OfficialRequest />
       <Problem />
+      <OfficialRequest />
       <CorridorMap />
       <ReportForm />
       <CoalitionForm />
-      <MemorialForm />
       <Progress />
       <Principles />
       <Proposal />
+      <MemorialForm />
       <FoundingCoalition />
       <About />
       <Contact />

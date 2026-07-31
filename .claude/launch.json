@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "safe441-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "3341"],
+      "port": 3341,
+      "cwd": "C:/Users/dandu/Downloads/safe441"
+    }
+  ]
+}

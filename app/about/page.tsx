@@ -4,8 +4,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Fix Broward is a nonpartisan civic-action platform testing whether residents, media, technology, and public follow-through can move local problems toward real solutions.",
+    "Broward Forward is a local media and community project exploring practical ways to improve life across Broward County — with curiosity, fairness, evidence, and honest follow-through.",
 };
+
+const questions = [
+  "What is happening now?",
+  "What is already working?",
+  "What could be improved?",
+  "Who understands the issue?",
+  "What solutions are realistically available?",
+  "Can one of those ideas be tested?",
+  "What happened after the idea was presented?",
+];
 
 const principles = [
   "Be accurate",
@@ -13,11 +23,11 @@ const principles = [
   "Protect people",
   "Show evidence",
   "Correct mistakes",
-  "Identify responsibility carefully",
+  "Start with curiosity, not accusation",
+  "Highlight what already works",
   "Propose realistic actions",
   "Follow up publicly",
   "Do not exploit tragedy",
-  "Measure outcomes",
 ];
 
 const isNot = [
@@ -26,7 +36,7 @@ const isNot = [
   "A legal service or law-enforcement tip line",
   "A place for unverified accusations",
   "A political campaign or partisan advocacy site",
-  "A promise that every issue will be fixed",
+  "A promise that every idea will be pursued",
 ];
 
 export default function AboutPage() {
@@ -34,35 +44,61 @@ export default function AboutPage() {
     <main className="section">
       <div className="container-content max-w-3xl">
         <p className="eyebrow">About</p>
-        <h1 className="h2">Why Fix Broward exists.</h1>
+        <h1 className="h2">What Broward Forward is.</h1>
         <p className="lede mt-4">
-          Fix Broward was created to test a simple idea: that residents, media,
-          technology, and public follow-through — combined — can help move local
-          problems toward real solutions.
+          Broward Forward is a local media and community project exploring
+          practical ways to improve life across Broward County. We highlight
+          people and organizations already doing valuable work, investigate
+          areas where improvement is possible, introduce useful ideas from
+          Broward and other communities, and test realistic solutions on a
+          local scale.
         </p>
 
         <blockquote className="mt-8 border-l-4 border-safety bg-navy-light p-6 text-slate-200">
-          Fix Broward does not begin with the assumption that every problem is
-          caused by corruption or neglect. Some problems are caused by limited
-          funding, divided responsibility, outdated systems, conflicting
-          priorities, missing information, or slow processes. The goal is to find
-          the real obstacle, explain it clearly, and keep the next step visible.
+          The goal is not to search for failures or attack public officials,
+          businesses, or institutions. The goal is to understand how Broward
+          works, listen to the people affected, identify opportunities, and
+          help good ideas move forward.
         </blockquote>
+
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-white">
+            Seven questions every project asks
+          </h2>
+          <ol className="mt-4 space-y-2.5">
+            {questions.map((q, i) => (
+              <li key={q} className="flex items-start gap-3 text-sm text-slate-200">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded bg-safety text-xs font-extrabold text-navy">
+                  {i + 1}
+                </span>
+                <span className="pt-0.5">{q}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-5 leading-relaxed text-slate-300">
+            Some stories will be positive from beginning to end. Others will
+            involve serious safety concerns, delayed projects, confusing
+            systems, or decisions that deserve public scrutiny. Broward Forward
+            approaches both with curiosity, fairness, evidence, and honest
+            follow-through. This is about progress — without pretending every
+            problem has an easy answer.
+          </p>
+        </section>
 
         <section className="mt-12">
           <h2 className="text-xl font-bold text-white">How it started</h2>
           <p className="mt-3 leading-relaxed text-slate-300">
-            The platform began as{" "}
+            The project began with{" "}
             <Link href="/441-safe" className="text-safety hover:underline">
-              441 SAFE Broward
+              A Safer 441
             </Link>
-            , a community effort for practical safety improvements along
-            US&nbsp;441 / State Road&nbsp;7. Documenting one corridor made the
-            bigger pattern obvious: all over Broward, problems get reported once,
-            bounce between agencies, and quietly disappear. Fix Broward is the
-            broader answer — one public place where problems are reported,
-            verified, routed to the responsible organization, and tracked until
-            something changes.
+            , an effort to understand and improve one of Broward&apos;s most
+            important roads. Spending time on one corridor made the bigger idea
+            obvious: all over Broward there are people doing valuable work,
+            systems that confuse everyone, and realistic improvements waiting
+            for someone to follow through. Broward Forward is the broader
+            project — meet Broward, imagine better, test ideas, follow the
+            progress.
           </p>
         </section>
 
@@ -79,7 +115,9 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-white">What Fix Broward is not</h2>
+          <h2 className="text-xl font-bold text-white">
+            What Broward Forward is not
+          </h2>
           <ul className="mt-4 space-y-2.5">
             {isNot.map((p) => (
               <li key={p} className="flex items-start gap-2.5 text-sm text-slate-300">
@@ -92,7 +130,7 @@ export default function AboutPage() {
             <strong className="text-white">
               If someone is in immediate danger, call 911.
             </strong>{" "}
-            Fix Broward is not an emergency-response service.
+            Broward Forward is not an emergency-response service.
           </p>
         </section>
 

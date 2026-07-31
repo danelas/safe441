@@ -8,35 +8,35 @@ const SITE_URL = "https://safe441.org";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Fix Broward — Reported. Routed. Tracked. Fixed.",
-    template: "%s — Fix Broward",
+    default: "Broward Forward — Meet Broward. Imagine better. Test ideas. Follow the progress.",
+    template: "%s — Broward Forward",
   },
   description:
-    "Fix Broward is a civic-action platform for Broward County: report a local problem, see who is responsible, follow a public timeline, and find out whether it was actually fixed.",
+    "Broward Forward is a local media and community project exploring practical ways to improve life across Broward County — highlighting what already works, listening to the people affected, and testing realistic ideas on a local scale.",
   keywords: [
-    "Fix Broward",
+    "Broward Forward",
     "Broward County",
-    "report a problem",
-    "civic action",
-    "road safety",
-    "441 SAFE",
+    "local media",
+    "community improvement",
+    "civic ideas",
+    "A Safer 441",
     "US 441 safety",
     "small business help",
-    "public accountability",
+    "local journalism",
   ],
   openGraph: {
-    title: "Fix Broward — Reported. Routed. Tracked. Fixed.",
+    title: "Broward Forward — Meet Broward. Imagine better. Test ideas. Follow the progress.",
     description:
-      "Report a local problem, see who is responsible, follow a public timeline, and find out whether it was actually fixed.",
+      "A local media and community project exploring practical ways to improve life across Broward County.",
     url: SITE_URL,
-    siteName: "Fix Broward",
+    siteName: "Broward Forward",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fix Broward",
+    title: "Broward Forward",
     description:
-      "One problem. One responsible party. One proposed fix. Public follow-through.",
+      "Meet Broward. Imagine better. Test ideas. Follow the progress.",
   },
 };
 

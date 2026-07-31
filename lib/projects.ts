@@ -23,45 +23,66 @@ export const STATUS_LABEL: Record<ProjectStatus, string> = {
 
 export const projects: Project[] = [
   {
-    slug: "441-safe-broward",
-    name: "441 SAFE Broward",
-    tagline: "A safer 441 starts with one coordinated plan.",
+    slug: "what-would-make-broward-better",
+    name: "What Would Make Broward Better?",
+    tagline: "One question, asked all over Broward.",
     status: "active",
-    phase: "Field documentation & agency outreach",
+    phase: "Collecting answers around the county",
     summary:
-      "Documenting safety conditions along US 441 / State Road 7, identifying the responsible organizations, proposing practical improvements, and publicly tracking follow-through.",
+      "Going around Broward asking one question: \"What is one realistic improvement that would make life in Broward better?\" The strongest answers become the projects we explore next.",
     mission:
-      "Investigate safety conditions along US 441 and State Road 7 in Broward County, document resident experiences, identify responsible organizations, propose practical improvements, and publicly track follow-through.",
+      "Ask residents across Broward one question — what is one realistic improvement that would make life here better? — then select the strongest ideas and explore them in public.",
     whyItMatters:
-      "US 441 carries some of the most dangerous intersections in Broward County. Residents cross it every day to reach work, school, and transit — and repeated crashes at the same locations show the problems are structural, not random.",
+      "Broward residents already know what is working and what could be better. Asking first — before arriving with a list of complaints — builds a project pipeline out of what people actually want.",
     focusAreas: [
-      "Dangerous intersections and crossings",
-      "Bus stop safety and sidewalk gaps",
-      "Lighting, visibility, and signal timing",
-      "Speeding and repeated-crash locations",
+      "Street interviews across Broward cities",
+      "Traffic, housing, parks, nightlife, safety, and more",
+      "Selecting the strongest ideas to explore",
+      "Following each idea from question to outcome",
     ],
-    cta: { label: "Explore 441 SAFE", href: "/441-safe" },
+    cta: { label: "Add Your Answer", href: "/report" },
+  },
+  {
+    slug: "a-safer-441",
+    name: "A Safer 441",
+    tagline:
+      "Listening, learning, and exploring practical improvements for one of Broward's most important roads.",
+    status: "active",
+    phase: "Listening & learning how the corridor works",
+    summary:
+      "Speaking with drivers, pedestrians, businesses, police, planners, and transit users along US 441 / State Road 7 — learning why the road operates as it does and exploring what improvements are feasible.",
+    mission:
+      "Listen to the people who use US 441 and State Road 7 every day, understand why the corridor operates as it does, highlight improvements already underway, and explore practical changes with the agencies responsible.",
+    whyItMatters:
+      "US 441 connects thousands of Broward residents to work, school, and transit every day. Understanding how the corridor works — and what has worked on similar roads elsewhere — is the first step toward practical improvement.",
+    focusAreas: [
+      "Improvements already underway",
+      "Conversations with drivers, riders, businesses, and planners",
+      "Road-safety ideas that worked elsewhere",
+      "Visual concepts for specific locations, checked for feasibility",
+    ],
+    cta: { label: "Explore A Safer 441", href: "/441-safe" },
     href: "/441-safe",
   },
   {
-    slug: "problem-tracker",
-    name: "Fix Broward Problem Tracker",
-    tagline: "Reported. Routed. Tracked. Fixed.",
+    slug: "project-tracker",
+    name: "Project Tracker",
+    tagline: "Every idea gets honest follow-through.",
     status: "launching",
-    phase: "Collecting first verified issues",
+    phase: "Preparing the first public projects",
     summary:
-      "The core civic platform: residents report local problems, the team verifies them and identifies the responsible organization, and every issue gets a public timeline until it is resolved or clearly explained.",
+      "The public record behind every Broward Forward project: what is happening, what is already working, what could improve, what was proposed, and what happened next.",
     mission:
-      "Create a public place where any Broward problem can be reported, verified, routed to the responsible organization, and tracked until something changes.",
+      "Give every idea and concern a public timeline — from first conversation to outcome — so progress is visible and follow-through is honest.",
     whyItMatters:
-      "Complaints disappear when nobody follows up. A public timeline keeps the next step visible — and makes it clear whether anything was actually fixed.",
+      "Good ideas disappear when nobody follows up. A public timeline keeps the next step visible — and shows honestly whether anything moved forward.",
     focusAreas: [
-      "Public problem reporting with evidence",
-      "Verification and responsible-agency research",
-      "Public status timelines for every issue",
-      "Official responses published in full",
+      "Ideas and concerns shared by residents",
+      "Research into who understands each issue",
+      "Public status timelines for every project",
+      "Outcomes reported honestly, including setbacks",
     ],
-    cta: { label: "Report a Problem", href: "/report" },
+    cta: { label: "Share an Idea or Concern", href: "/report" },
   },
   {
     slug: "business-rescue",

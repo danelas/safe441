@@ -2,10 +2,10 @@ export default function About() {
   return (
     <section id="about" className="section border-y border-white/10 bg-navy-light">
       <div className="container-content max-w-3xl">
-        <p className="eyebrow">About Safe 441</p>
+        <p className="eyebrow">About A Safer 441</p>
         <h2 className="h2">An independent community initiative.</h2>
         <p className="lede mt-5">
-          Safe 441 is an independent community initiative focused on improving
+          A Safer 441 is an independent community initiative focused on improving
           safety along US&nbsp;441 in central Broward County.
         </p>
         <div className="mt-6 rounded-xl border border-safety/30 bg-navy p-6">

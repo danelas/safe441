@@ -1,14 +1,20 @@
-# Safe 441
+# Broward Forward
 
-A one-page **action and evidence** website for a nonpartisan community effort to make
-US 441 safer between Sheridan Street and Griffin Road, in central Broward County.
+A local media and community project exploring practical ways to improve life across
+Broward County — highlighting what already works, listening to the people affected,
+and testing realistic ideas on a local scale.
 
-It is intentionally *not* a large informational site. A visitor can immediately:
+**Meet Broward. Imagine better. Test ideas. Follow the progress.**
 
-1. **Join the coalition**
-2. **Report a dangerous location**
-3. **Read / endorse the official proposal**
-4. **Follow the campaign's progress**
+Projects include the first series **What Would Make Broward Better?** (street
+interviews around one question), **A Safer 441** (listening, learning, and exploring
+practical improvements for US 441 between Sheridan Street and Griffin Road), the
+**Project Tracker**, and **Business Rescue**. A visitor can immediately:
+
+1. **Share an idea or concern**
+2. **Explore A Safer 441**
+3. **Follow the Project Tracker**
+4. **Get involved / apply for Business Rescue**
 
 ## Stack
 

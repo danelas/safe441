@@ -53,7 +53,7 @@ export default function CoalitionForm() {
         <div className="container-content">
           <SuccessCard
             title="Thank you — you're on the list."
-            body="Your interest in joining the Safe 441 coalition has been received. We'll be in touch as the founding coalition forms. A confirmation has been sent to your email."
+            body="Your interest in joining the A Safer 441 coalition has been received. We'll be in touch as the founding coalition forms. A confirmation has been sent to your email."
           />
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function CoalitionForm() {
       <div className="container-content grid gap-10 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:items-start">
         <div className="lg:sticky lg:top-24">
           <p className="eyebrow">Join the coalition</p>
-          <h2 className="h2">Safe 441 is forming its founding coalition.</h2>
+          <h2 className="h2">A Safer 441 is forming its founding coalition.</h2>
           <p className="lede mt-5">
             You do not need to become a full-time volunteer. You can participate by
             sharing your experience, attending one meeting, reviewing a proposal,
@@ -153,7 +153,7 @@ export default function CoalitionForm() {
           <div className="mt-5 space-y-2.5">
             <label className="check-row">
               <input type="checkbox" name="permission_contact" defaultChecked className="mt-0.5 accent-safety" />
-              You may contact me about Safe 441.
+              You may contact me about A Safer 441.
             </label>
             <label className="check-row">
               <input type="checkbox" name="permission_public" className="mt-0.5 accent-safety" />

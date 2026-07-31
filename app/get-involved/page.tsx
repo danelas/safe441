@@ -4,7 +4,7 @@ import VolunteerForm from "@/components/VolunteerForm";
 export const metadata: Metadata = {
   title: "Get Involved",
   description:
-    "Volunteer with Fix Broward — help with video, research, data, outreach, translation, or professional expertise across any of our Broward projects.",
+    "Volunteer with Broward Forward — help with video, research, data, outreach, translation, or professional expertise across any of our Broward projects.",
 };
 
 const ways = [

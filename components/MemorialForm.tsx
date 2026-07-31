@@ -46,7 +46,7 @@ export default function MemorialForm() {
         <div className="container-content">
           <SuccessCard
             title="Thank you for sharing."
-            body="We are grateful you reached out. A member of Safe 441 will contact you privately and gently. Nothing you shared will be published without your clear, specific permission."
+            body="We are grateful you reached out. Someone from the A Safer 441 team will contact you privately and gently. Nothing you shared will be published without your clear, specific permission."
           />
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function MemorialForm() {
           <p className="eyebrow">In memoriam</p>
           <h2 className="h2">Remembering Lives Lost on 441</h2>
           <p className="lede mt-5">
-            Have you lost a family member or loved one on US 441 / SR 7? Safe 441
+            Have you lost a family member or loved one on US 441 / SR 7? A Safer 441
             Broward is gathering voluntary stories from families who want the public
             and decision-makers to understand the human cost of roadway danger. You
             may contact us privately without agreeing to publication or an interview.

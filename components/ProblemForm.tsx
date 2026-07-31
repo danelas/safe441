@@ -82,7 +82,7 @@ export default function ProblemForm() {
     >
       <div className="rounded-md border border-alert/50 bg-alert/10 p-4 text-sm text-slate-200">
         <strong className="text-white">If someone is in immediate danger, call 911.</strong>{" "}
-        Fix Broward is not an emergency-response service.
+        Broward Forward is not an emergency-response service.
       </div>
 
       <div>
@@ -347,7 +347,7 @@ export default function ProblemForm() {
             className="mt-0.5"
           />
           <span>
-            I understand Fix Broward is not an emergency or government service,
+            I understand Broward Forward is not an emergency or government service,
             submissions are reviewed before appearing publicly, and selection or
             resolution is not guaranteed. <span className="text-safety">*</span>
           </span>

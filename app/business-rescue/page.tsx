@@ -4,7 +4,7 @@ import BusinessForm from "@/components/BusinessForm";
 export const metadata: Metadata = {
   title: "Business Rescue — Ten Businesses in Thirty Days",
   description:
-    "Apply for Fix Broward's Business Rescue project: practical marketing, web, and presentation help for Broward businesses, with measurable before-and-after results.",
+    "Apply for Broward Forward's Business Rescue project: practical marketing, web, and presentation help for Broward businesses, with measurable before-and-after results.",
 };
 
 const services = [

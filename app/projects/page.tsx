@@ -5,7 +5,7 @@ import { projects, STATUS_LABEL } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Fix Broward projects: 441 SAFE Broward, the Problem Tracker, Business Rescue, Broward Response Lab, Flood & Heat Watch, Youth Creator Lab, Street Cat Network, and Home Rescue Broward.",
+    "Broward Forward projects: What Would Make Broward Better?, A Safer 441, the Project Tracker, Business Rescue, Broward Response Lab, Flood & Heat Watch, Youth Creator Lab, Street Cat Network, and Home Rescue Broward.",
 };
 
 export default function ProjectsPage() {

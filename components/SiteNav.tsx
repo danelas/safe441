@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { href: "/report", label: "Report a Problem" },
-  { href: "/tracker", label: "Tracker" },
+  { href: "/report", label: "Share an Idea" },
+  { href: "/tracker", label: "Project Tracker" },
   { href: "/projects", label: "Projects" },
-  { href: "/441-safe", label: "441 SAFE" },
+  { href: "/441-safe", label: "A Safer 441" },
   { href: "/business-rescue", label: "Business Rescue" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/about", label: "About" },
@@ -21,10 +21,10 @@ export default function SiteNav() {
       <nav className="container-content flex h-[68px] items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded bg-safety text-sm font-extrabold text-navy">
-            FIX
+            BF
           </span>
           <span className="text-lg font-extrabold tracking-tight text-white">
-            Fix&nbsp;Broward
+            Broward&nbsp;Forward
           </span>
         </Link>
 
@@ -39,7 +39,7 @@ export default function SiteNav() {
             </Link>
           ))}
           <Link href="/report" className="btn-primary !px-5 !py-2 text-sm">
-            Report a Problem
+            Share an Idea
           </Link>
         </div>
 

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getSupabaseAdmin } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "Problem Tracker",
+  title: "Project Tracker",
   description:
-    "The Fix Broward Problem Tracker: verified local issues, who is responsible, what response was received, and whether anything was actually fixed.",
+    "The Broward Forward Project Tracker: ideas and concerns being explored, what is already working, what was proposed, and what happened next.",
 };
 
 export const revalidate = 300;
@@ -65,27 +65,28 @@ export default async function TrackerPage() {
   return (
     <main className="section">
       <div className="container-content">
-        <p className="eyebrow">Problem Tracker</p>
-        <h1 className="h2">Reported. Routed. Tracked. Fixed.</h1>
+        <p className="eyebrow">Project Tracker</p>
+        <h1 className="h2">Every idea gets honest follow-through.</h1>
         <p className="lede mt-4 max-w-2xl">
-          Every verified issue gets a public record: what is happening, who is
-          responsible, what response was received, and what happens next. Issues
-          stay visible until they are resolved, closed, or clearly explained.
+          Every idea or concern we take on gets a public record: what is
+          happening now, what is already working, what could improve, what was
+          proposed, and what happened next. Projects stay visible until there is
+          a real outcome or an honest explanation.
         </p>
 
         {issues.length === 0 ? (
           <div className="mt-12 rounded-lg border border-white/10 bg-navy-light p-10 text-center">
             <p className="text-lg font-bold text-white">
-              The first verified issues are being prepared.
+              The first projects are being prepared.
             </p>
             <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-slate-300">
-              Submissions are reviewed, verified, and researched before they
-              appear here — nothing publishes automatically, and we don&apos;t
-              pad the tracker with placeholders. Be one of the first reports.
+              Ideas and concerns are reviewed and researched before they appear
+              here — nothing publishes automatically, and we don&apos;t pad the
+              tracker with placeholders. Share one of the first ideas.
             </p>
             <div className="mt-6">
               <Link href="/report" className="btn-primary">
-                Report a Problem
+                Share an Idea or Concern
               </Link>
             </div>
           </div>
@@ -135,9 +136,9 @@ export default async function TrackerPage() {
         )}
 
         <p className="mt-10 text-xs leading-relaxed text-slate-500">
-          Every issue shown here has been reviewed by the team. Statuses reflect
-          the last confirmed step — not a promise of resolution. If someone is in
-          immediate danger, call 911.
+          Everything shown here has been reviewed by the team. Statuses reflect
+          the last confirmed step — not a promise of an outcome. If someone is
+          in immediate danger, call 911.
         </p>
       </div>
     </main>

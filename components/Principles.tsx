@@ -1,7 +1,7 @@
 const principles = [
   {
     title: "Safety before politics",
-    body: "Safe 441 is nonpartisan. Preventing serious injuries and deaths should not depend on political affiliation.",
+    body: "A Safer 441 is nonpartisan. Preventing serious injuries and deaths should not depend on political affiliation.",
   },
   {
     title: "Evidence before assumptions",
@@ -30,7 +30,7 @@ export default function Principles() {
     <section id="principles" className="section">
       <div className="container-content">
         <p className="eyebrow">Our principles</p>
-        <h2 className="h2 max-w-3xl">How Safe 441 makes decisions.</h2>
+        <h2 className="h2 max-w-3xl">How A Safer 441 makes decisions.</h2>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p) => (
